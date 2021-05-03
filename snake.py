@@ -10,12 +10,14 @@ pygame.init()
 screen = pygame.display.set_mode((600,600))
 pygame.display.set_caption('Snake Game')
 
+
 snake = [(200, 200), (210, 200), (220, 200)]
 snake_skin = pygame.Surface((10, 10))
 snake_skin.fill((255, 255, 255))
 
-
 snake_direction = LEFT
+
+clock = pygame.time.Clock()
 
 
 def random_position_food():
@@ -32,9 +34,6 @@ food_position = random_position_food()
 def collision(c1, c2):
     return (c1[0] == c2[0] and (c1[1] == c2[1]))
 
-
-
-clock = pygame.time.Clock()
 
 
 
@@ -80,9 +79,9 @@ while True:
         screen.blit(snake_skin, position)
 
 
-
     clock.tick(20)
     
+
     pygame.display.update()
 
 
