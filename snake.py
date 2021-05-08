@@ -76,7 +76,11 @@ while True:
     for position in snake:
         screen.blit(snake_skin, position)
 
-    clock.tick(15) 
+    if snake[0] < (0, 0) or snake[0] > (600, 600):
+        pygame.quit()
+    
+    clock.tick(20)
+    
 
     pygame.display.update()
 
