@@ -6,7 +6,7 @@ RIGHT = 1
 DOWN = 2
 LEFT = 3
 
-pygame.init()
+pygame.init() 
 screen = pygame.display.set_mode((600,600))
 pygame.display.set_caption('Snake Game')
 
@@ -38,7 +38,6 @@ def collision(c1, c2):
 
 
 while True:
-
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
@@ -72,15 +71,12 @@ while True:
         snake[0] = (snake[0][0] - 10, snake[0][1])
 
 
-
     screen.fill((0, 0, 0))
     screen.blit(food, food_position)
     for position in snake:
         screen.blit(snake_skin, position)
 
-
-    clock.tick(20)
-    
+    clock.tick(15) 
 
     pygame.display.update()
 
